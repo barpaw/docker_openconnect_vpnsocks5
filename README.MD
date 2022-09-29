@@ -1,6 +1,6 @@
 # Dockerized vpn proxy working as socks5 proxy (openconnect)
 
-git init
+Dockerized [openconnect](https://www.infradead.org/openconnect/) VPN. Exposes socks5 proxy. 
 
 ## Info
 
@@ -41,4 +41,3 @@ eg.
 sh run.sh env_cisco
 ```
 - To stop you must stop/delete container. 
-
