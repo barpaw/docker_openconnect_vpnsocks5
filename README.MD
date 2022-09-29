@@ -1,14 +1,12 @@
 # Dockerized vpn proxy working as socks5 proxy (openconnect)
 
-Dockerized [openconnect](https://www.infradead.org/openconnect/) VPN. Exposes socks5 proxy.
+git init
 
 ## Info
-___
 
 This repository provides a dockerized version of openconnect. The container accepts connections to a SOCKS5 proxy, and forwards everything through the VPN.
 
 ## Supported VPNs protocols
-___
 
 ```
 Cisco AnyConnect (--protocol=anyconnect)
@@ -21,7 +19,6 @@ Fortinet Fortigate SSL VPN (--protocol=fortinet)
 ```
 
 ## Usage
-___
 
 - Install docker
 - Edit user credentials and connection details in  ```env``` file (you can have multiple env files eg. env_cisco)
