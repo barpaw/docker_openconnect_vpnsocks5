@@ -1,6 +1,20 @@
 FROM alpine:3.16.2
 
-RUN apk update && apk add --no-cache ca-certificates tzdata libevent-dev autoconf automake gcc binutils make alpine-sdk linux-headers libtool xdg-utils vpnc gettext openssl-dev libxml2-dev
+ENV USER=docker
+ENV UID=12345
+ENV GID=23456
+
+RUN addgroup -S "$USER" && \
+    adduser \
+    --disabled-password \
+    --gecos "" \
+    --home "$(pwd)" \
+    --ingroup "$USER" \
+    --no-create-home \
+    --uid "$UID" \
+    "$USER"
+
+RUN apk update && apk add --no-cache ca-certificates tzdata libevent-dev autoconf automake gcc binutils make alpine-sdk linux-headers libtool xdg-utils vpnc gettext openssl-dev libxml2-dev && rm -rf /var/lib/apt/lists
 
 # build and install openconnect 
 WORKDIR /
@@ -22,6 +36,8 @@ RUN make install
 
 WORKDIR /vpn
 COPY ./entrypoint.sh .
+
+USER docker
 
 EXPOSE 9876
 
