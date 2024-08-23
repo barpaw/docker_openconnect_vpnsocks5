@@ -1,9 +1,0 @@
-URL='ip:port'
-USER='user'
-PASS='password'
-PROTOCOL='protocol eg. fortinet'
-EXTRA_ARGS='extra openconnect args eg. --servercert pin-sha256:...'
-SOCKS5_PROXY_PORT=2602
-CONTAINER_NAME='valid docker container name eg. fortinet_vpn'
-DOCKER_IMAGE_NAME='valid docker image name eg. fortinet_vpn'
-TIME_ZONE='valid tzdata time zone eg. Europe/Berlin'
