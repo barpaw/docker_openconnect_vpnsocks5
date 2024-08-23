@@ -2,7 +2,7 @@
 ![Logo](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/th5xamgrr6se0x5ro4g6.png)
 
 
-# openconnect-proxy
+# openconnect-ocproxy
 
 This project aims to facilitate the setup of a secure VPN connection within a Docker container using the OpenConnect client, provides access to the VPN connection through a SOCKS5 proxy provided by ocproxy. It supports multiple VPN protocols, including Cisco's AnyConnect SSL VPN, and allows for establishing multiple simultaneous connections to supported VPNs, even those using the same protocol. Network traffic is routed through the VPN via the SOCKS5 proxy, enabling easy and secure tunneling of connections from your local environment or other applications through the VPN.
 
@@ -12,7 +12,7 @@ This project aims to facilitate the setup of a secure VPN connection within a Do
 - [ocproxy](https://github.com/cernekee/ocproxy) (v1.60)
 ## Getting Started
 
-To set up **openconnect-proxy**, configure environment variables according to whether you're running the Docker container directly or building and running locally.Depending on whether you're running the Docker container directly or building and running locally, the configuration steps differ:
+To set up **openconnect-ocproxy**, configure environment variables according to whether you're running the Docker container directly or building and running locally.Depending on whether you're running the Docker container directly or building and running locally, the configuration steps differ:
 
 ### Running with Docker
 
@@ -28,10 +28,10 @@ docker run \
 -e OPENCONNECT_PASSWORD="password" \
 -e OPENCONNECT_MFA_CODE='mfa_code (optional)' \
 -e OPENCONNECT_OPTIONS="--protocol=<vpn_protocol>" \
---name "openconnect-proxy" \
+--name "openconnect-ocproxy" \
 -p <local_port>:9876 \
 --restart always \
-barpaw/openconnect-proxy:1.0.0
+barpaw/openconnect-ocproxy:1.0.0
 ```
 - Replace ``ip:port``, ``user``, ``password``, ``mfa_code``, ``<vpn_protocol>``, and ``<local_port>`` with the appropriate values for your setup.
 - **Note:** Your connection may require additional options in ``OPENCONNECT_OPTIONS``. Check the [OpenConnect manual](https://www.infradead.org/openconnect/manual.html) for more flags.
@@ -75,13 +75,13 @@ OpenConnect supports the following VPN protocols:
 For more details on these protocols and additional options, please refer to the OpenConnect [manual](https://www.infradead.org/openconnect/manual.html).
 ## Docker Hub
 
-You can find the Docker image for **openconnect-proxy** on Docker Hub. Pull the image using the following command:
+You can find the Docker image for **openconnect-ocproxy** on Docker Hub. Pull the image using the following command:
 
 ```bash
-docker pull barpaw/openconnect-proxy:1.0.0
+docker pull barpaw/openconnect-ocproxy:1.0.0
 ```
 
-For more details, visit the [Docker Hub repository](https://hub.docker.com/r/barpaw/openconnect-proxy).
+For more details, visit the [Docker Hub repository](https://hub.docker.com/r/barpaw/openconnect-ocproxy).
 
 ## License
 
