@@ -3,7 +3,7 @@
 
 # openconnect-ocproxy
 
-This project aims to facilitate the setup of a secure VPN connection within a Docker container using the OpenConnect client, provides access to the VPN connection through a SOCKS5 proxy provided by ocproxy. It supports multiple VPN protocols, including Cisco's AnyConnect SSL VPN, and allows for establishing multiple simultaneous connections to supported VPNs, even those using the same protocol. Network traffic is routed through the VPN via the SOCKS5 proxy, enabling easy and secure tunneling of connections from your local environment or other applications through the VPN.
+This project aims to facilitate the setup of a secure VPN connection within a Docker container using the **OpenConnect** client, providing access to the VPN connection through a SOCKS5 proxy powered by **ocproxy**. It supports multiple VPN protocols, including Cisco's AnyConnect SSL VPN, and allows for establishing multiple simultaneous connections to supported VPNs, even those using the same protocol, with isolation at the Docker container level. Network traffic is routed through the VPN via the SOCKS5 proxy, enabling easy and secure tunneling of connections from your local environment or other applications through the VPN.
 
 ## Components Used
 
@@ -11,7 +11,7 @@ This project aims to facilitate the setup of a secure VPN connection within a Do
 - [ocproxy](https://github.com/cernekee/ocproxy) (v1.60)
 ## Getting Started
 
-To set up **openconnect-ocproxy**, configure environment variables according to whether you're running the Docker container directly or building and running locally.Depending on whether you're running the Docker container directly or building and running locally, the configuration steps differ:
+To set up **openconnect-ocproxy**, configure environment variables according to whether you're running the Docker container directly or building and running locally.
 
 ### Running with Docker
 
@@ -37,7 +37,7 @@ barpaw/openconnect-ocproxy:latest
 
 ### Building and Running Locally
 
-When building and running the container locally using the ``build_and_run_locally.sh`` script, configure the environment variables in a ``env`` file. Follow these steps:
+When building and running the container locally using the ``build_and_run_locally.sh`` script, configure the environment variables in a ``.env`` file. Follow these steps:
 
 1. **Create an Environment File:** Create a .env file in the repository directory with the required environment variables. The .env file should look like this:
 
