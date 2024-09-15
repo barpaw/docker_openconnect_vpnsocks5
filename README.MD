@@ -1,5 +1,5 @@
 
-![Logo](Logo2.png)
+![Logo](Logo.png)
 
 # openconnect-ocproxy
 
